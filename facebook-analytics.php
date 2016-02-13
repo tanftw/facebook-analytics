@@ -28,7 +28,7 @@ if ( ! defined( 'BFA_DIR' ) )
 	define( 'BFA_DIR', plugin_dir_path( __FILE__ ) );
 
 // Load the conditional logic and assets
-include BFA_DIR . 'helpers.php';
+include BFA_DIR . 'lib/class-tgm-plugin-activation.php';
 include BFA_DIR . 'class-facebook-analytics.php';
 include BFA_DIR . 'class-facebook-analytics-settings.php';
 

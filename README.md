@@ -1,2 +1,11 @@
 # Facebook Analytics
-Facebook Analytics for WordPress
+
+Automatically track your Facebook likes, comments per day with Google Analytics.
+
+## Installation
+
+
+## How to use?
+
+
+## Contribution

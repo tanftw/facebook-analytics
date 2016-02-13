@@ -1,35 +1,55 @@
 <?php
-
+/**
+ * Add settings meta box after General Setting in Get Facebook Likes plugin
+ *
+ * @author Tan Nguyen <tan@binaty.org>
+ */
 class Facebook_Analytics_Settings
 {
+	/**
+	 * Register default setting and add setting meta box
+	 */
 	public function __construct()
 	{
-		add_action( 'gfl_after_general_settings', array( $this, 'settings' ) );
+		// Render setting meta box after General Settings
+		add_action( 'gfl_after_general_settings', array( $this, 'render' ) );
 
+		// Register default settings
 		add_filter( 'gfl_default_settings', array( $this, 'default_settings' ) );
 	}
 
+	/**
+	 * Default settings for Facebook Analytics
+	 * 
+	 * @param  Array $settings
+	 * 
+	 * @return Array
+	 */
 	public function default_settings( $settings )
 	{
-		$settings['enqueue_mode'] 			= 'inline';
-		$settings['fa_actions'] 			= array('like', 'unlike', 'comment');
+		$settings['fa_actions'] 			= array( 'like', 'unlike', 'comment' );
 		$settings['google_analytics_id'] 	= '';
 
 		return $settings;
 	}
 
-	public function settings()
+	/**
+	 * Settings Meta Box
+	 * 
+	 * @return void
+	 */
+	public function render()
 	{
 		$defaults = gfl_default_settings();
 		?>
 		<div class="postbox">
 	    	<div class="handlediv" title="Click to toggle"> <br></div>
-	      	<h3 class="hndle ui-sortable-handle"><span class="dashicons dashicons-admin-plugins"></span> <?php _e( 'Facebook Analytics', 'get-facebook-likes' ); ?></h3>
+	      	<h3 class="hndle ui-sortable-handle"><span class="dashicons dashicons-admin-plugins"></span> <?php _e( 'Facebook Analytics', 'facebook-analytics' ); ?></h3>
 	      	<div class="inside">
 				<table class="form-table">
 
             		<tr valign="top">
-            			<th><?php _e( 'Actions', 'get-facebook-likes' ); ?></th>
+            			<th><?php _e( 'Actions', 'facebook-analytics' ); ?></th>
             			<td>
             				<?php foreach ( $defaults['fa_actions'] as $action ) : ?>
 							<label>
@@ -37,30 +57,16 @@ class Facebook_Analytics_Settings
             				</label>
             				<?php endforeach; ?>
             				
-							<p class="description">What actions to track with Google Analytics.</p>
+							<p class="description"><?php _e( 'What actions to track with Google Analytics.', 'facebook-analytics' ); ?></p>
             			</td>
             		</tr>
 
             		<tr valign="top">
-            			<th><?php _e( 'Script Mode', 'get-facebook-likes' ); ?></th>
-            			<td>
-            				<label>
-            					<input type="radio" name="enqueue_mode" value="inline" <?php if ( gfl_setting( 'enqueue_mode' ) == 'inline' ) echo 'checked'; ?>> Inline
-            				</label>
-            				<label>
-            					<input type="radio" name="enqueue_mode" value="external" <?php if ( gfl_setting( 'enqueue_mode' ) == 'external' ) echo 'checked'; ?>> External
-            				</label>
-							<p class="description">Where to include Facebook analytics script. Inline or external.</p>
-            			</td>
-            		</tr>
-
-
-            		<tr valign="top">
-            			<th><?php _e( 'Google Analytics ID', 'get-facebook-likes' ); ?></th>
+            			<th><?php _e( 'Google Analytics ID', 'facebook-analytics' ); ?></th>
             			<td>
             				<input type="text" id="google_analytics_id" name="google_analytics_id" placeholder="UA-XXXXXXXX-X" value="<?php echo gfl_setting('google_analytics_id'); ?>"><br>
 
-							<p class="description">This will add Google Analytics Tracking Code to your website's footer. Leaves blank if you've already set.</p>
+							<p class="description"><?php _e( "This will add Google Analytics Tracking Code to your website's footer. Leaves blank if you've already set.", 'facebook-analytics' ); ?></p>
             			</td>
             		</tr>
 
