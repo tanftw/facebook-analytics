@@ -15,7 +15,7 @@ class Facebook_Analytics
 		add_action( 'admin_notices', array( $this, 'admin_notices' ) );
 
 		// Add Facebook Analytics and Google Analytics to site footer
-		add_action( 'wp_footer', array( $this, 'facebook_analytic_scripts' ) );
+		add_action( 'wp_footer', array( $this, 'facebook_analytic_scripts' ), 999 );
 
 		// Install dependencies
 		add_action( 'tgmpa_register', array( $this, 'dependencies' ) );
