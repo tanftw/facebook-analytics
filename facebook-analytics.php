@@ -7,7 +7,7 @@ Version: 1.0
 Author: Tan Nguyen
 Author URI: http://www.binaty.org
 License: GPL2+
-Text Domain: bfa
+Text Domain: facebook-analytics
 Domain Path: /lang
 */
 
