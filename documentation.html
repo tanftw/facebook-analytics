@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<head lang="en">
+	<meta charset="utf-8">
+	<title>Facebook Analytics Documentation</title>
+	<style type="text/css">
+body {font: 13px Verdana, Arial, Helvetica, sans-serif}
+strong {font-weight: bold}
+h1, h2, h3,h4,h5 {font: bold 36px Georgia, "Times New Roman", Times, serif; padding-bottom: 0.5em; margin: 2em 0 1em}
+h2 {font-size: 26px}
+h3 {font-size: 22px}
+h4 {font-size: 19px}
+h5 {font-size: 16px; font-weight: normal}
+p {margin-bottom: 1em; line-height: 1.5em; text-align: justify}
+ul {list-style: disc; padding-left: 20px; margin: 1em 0}
+ol {list-style: decimal; padding-left: 20px}
+code {background: #eee}
+
+.container {width: 960px; margin: 30px auto}
+header, section, footer {display: block}
+
+header h1 {text-align: center}
+
+nav ul {overflow: hidden; margin-bottom: 20px; padding-left: 0}
+nav li {list-style: none; float: left; border-left: 1px solid #ccc; padding: 0 10px}
+nav li:first-child {border-left: none; padding-left: 0}
+
+#info strong {width: 120px; display: inline-block}
+.center{ text-align: center;}
+footer {margin: 15px auto; color: #999; font-size: 11px}
+        
+    </style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h1 class="center">Facebook Analytics Documentation</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					By: Tan Nguyen<br>
+					Email: <a href="mailto:tan@binaty.org">tan@binaty.org</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my plugin. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://codecanyon/user/binaty">here</a>. <br>
+				Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol>
+			<li><a href="#installation">Installation</a></li>
+			<li><a href="#configurations">Configurations</a></li>
+			<li><a href="#uninstallation">Uninstallation</a></li>
+			<li><a href="#change-logs">Change Logs</a></li>
+		</ol>
+		
+		<hr>
+		
+		<h3 id="installation"><strong>1. Installation</strong> - <a href="#toc">top</a></h3>
+        
+        <h4>Site Requirements</h4>
+		<p>
+            Facebook Analytics has tested and compatibility with
+            <ul>
+                <li>WordPress 4.0+</li>
+                <li>PHP 5.2+</li>
+            </ul>
+           
+        </p>
+
+		<h4>Preinstall</h4>
+		<ul>
+		    <li>Make sure you have backed up your database before install</li>
+		    <li>It's recommended that you remove another Facebook Javascript SDK if exists</li>
+		    <li>Facebook Analytics is an addon of <a href="https://wordpress.org/plugins/get-facebook-likes/">Get Facebook Likes</a> so make sure you have installed Get Facebook Likes before install this plugin. It's easy and available at WordPress plugin repository so you can install that plugin through the WordPress plugins screen directly.
+		    </li>
+		</ul>
+		
+		
+		<h4>Installation</h4>
+        <ol>
+        	<li>Install Get Facebook Likes plugin, for more information, please follow <a href="https://wordpress.org/plugins/get-facebook-likes/">this</a> guide</li>
+            <li>Download <code>facebook-analytics.zip</code> and unzip the package</li>
+            <li>Upload <code>facebook-analytics</code> folder to the <code>wp-content/plugins/</code> directory</li>
+            <li>Activate the plugin through the Plugins menu in WordPress</li>
+            <li>Start using the plugin through the menu <code>Settings\Get Facebook Likes</code></li>
+        </ol>
+
+		<hr>
+		
+		<h3 id="configurations"><strong>2. Configuration</strong> - <a href="#toc">top</a></h3>
+		
+		<p>Because we'll need to send data to Google Analytics right after users click Like or Comment. These following steps help you do that:</p>
+		
+		<ol>
+			<li>In <strong>General Settings \ Mode</strong>, select <strong>Advanced</strong></li>
+			<li>Check <strong>Auto add JS SDK to wp_head</strong> checkbox (*)</li>
+			<li><em>Optional</em> Enter App ID and App Locale if you want</li>
+		</ol>
+		
+		<p>(*) In case you're already have another JS SDK installed, you can either uncheck <code>Auto add JS SDK to wp_head</code> option and follow the setup guide appear right after you uncheck or remove another JS SDK.
+		</p>
+		
+		<h4>Facebook Analytics Settings</h4>
+		<p>In this section, choose the action that you want to track and enter your Google Analytics ID. Leaves blank if you're already have tracking code installed</p>
+		
+		<figure><em>If you following above steps. You'll see a screen like so</em></figure>
+		<img src="https://binaty.org/images/screenshots/setup.jpg" alt="Facebook Analytics Settings">
+
+		<hr>
+		
+		<h3 id="uninstallation"><strong>4. Uninstallation</strong> - <a href="#toc">top</a></h3>
+        <p>Go to <code>Plugins\Installed Plugins</code>, locate to <strong>Facebook Analytics</strong> and click "Deactivate".</p>
+		<hr>
+
+		<h3 id="change-logs"><strong>5. Change Logs - <a href="#toc">top</a></strong></h3>
+
+		<strong>Version 1.0 - March 7, 2015</strong>
+		<ul>
+			<li>Initial Release</li>
+		</ul>
+
+		<footer>
+            Copyright &copy; 2016 Binaty
+            
+		    <p><a href="#toc">Go To Table of Contents</a></p>
+		</footer>
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>

@@ -66,7 +66,7 @@ class Facebook_Analytics_Settings
             			<td>
             				<input type="text" id="google_analytics_id" name="google_analytics_id" placeholder="UA-XXXXXXXX-X" value="<?php echo gfl_setting('google_analytics_id'); ?>"><br>
 
-							<p class="description"><?php _e( "This will add Google Analytics Tracking Code to your website's footer. Leaves blank if you've already set.", 'facebook-analytics' ); ?></p>
+							<p class="description"><?php _e( "This will add Google Analytics tracking code to your website. Leaves blank if you've already added.", 'facebook-analytics' ); ?></p>
             			</td>
             		</tr>
 

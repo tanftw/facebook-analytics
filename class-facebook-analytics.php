@@ -30,11 +30,11 @@ class Facebook_Analytics
 	{
 		$plugins = array(
 			array(
-				'name' => 'Get Facebook Likes',
-				'slug' => 'get-facebook-likes',
-				'required' => true,
-				'force_activation' => true,
-				'force_deactivation' => false
+				'name' 					=> 'Get Facebook Likes',
+				'slug' 					=> 'get-facebook-likes',
+				'required' 				=> true,
+				'force_activation' 		=> true,
+				'force_deactivation' 	=> false
 			)
 		);
 
@@ -70,7 +70,7 @@ class Facebook_Analytics
 			return;
 
 		echo '<div class="error"><p>';
-		_e( 'Facebook Analytics requires Get Facebook Like plugin to works. Please install and activate it.', 'facebook-analytics' );
+		_e( 'Facebook Analytics requires <a href="https://wordpress.org/plugins/get-facebook-likes/">Get Facebook Like</a> plugin to works. Please install and activate it.', 'facebook-analytics' );
 		echo '</p></div>';
 	}
 
@@ -109,7 +109,7 @@ class Facebook_Analytics
 			<?php foreach ( $actions as $action ) : ?>
 			GFL.subscribe('<?php echo $matches[$action] ?>', function(url) {
 			  	ga('send', 'social', 'Facebook', '<?php echo $action ?>', url);
-		    });
+			});
 		    <?php endforeach; ?>
 		</script>
 		<?php
